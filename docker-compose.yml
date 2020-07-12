@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    restart: always
+    env_file:
+      - .env
+    command: "python service.py"
+    container_name:
+        "${CONTAINER_NAME}_web"
+    ports:
+      - "${PORT}:8000"
