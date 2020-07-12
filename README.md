@@ -1,12 +1,25 @@
 ## 1- Clone project
+
+
 ## 2- Create `.env` file like `.env.mk`
 * `cp .env.mk .env`
 * smpp configs are available in `.env` file now
+
+
 ## 3- Build
 * `docker-compose build`
+* if do not want to use docker compose:
+    * `docker build . -t rest-smpp`
+    
+    
 ## 4- Run
 * `docker-compose up`
-
+* if do not want to run with docker compose:
+    *  `docker run -e SMPP_HOST=mscsim.melroselabs.com -e SMPP_PORT=2775 -e SMPP_SYSTEM_ID=887490 -e SMPP_PASSWORD=YQPMQGd -e SMPP_SOURCE_ADDRESS=00887490 -p 8000:8000 smpp`
+    
+    *  `docker run --env-file .env -p 8000:8000 smpp`
+    
+    
 ## 5- Api Document
 * Send a new message.
     ```python
@@ -22,6 +35,8 @@
          "success": True
      }
      ```
+  
+  
 * Check connection.
 
    ```python  
