@@ -9,7 +9,7 @@ SYSTEM_ID = os.environ['SMPP_SYSTEM_ID']
 PASSWORD = os.environ['SMPP_PASSWORD']
 SOURCE_ADDRESS = os.environ['SMPP_SOURCE_ADDRESS']
 
-client = smpplib.client.Client(HOST, POST)
+client = smpplib.client.Client(HOST, 5)
 
 
 def check():
